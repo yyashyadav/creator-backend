@@ -8,6 +8,7 @@ import {
   listProjects,
   updateProject,
 } from "../controllers/projectController.js";
+import { listProjectVideos, startRender } from "../controllers/videoController.js";
 
 const router = Router();
 
@@ -19,5 +20,7 @@ router.get("/:id", getProject);
 router.patch("/:id", updateProject);
 router.delete("/:id", deleteProject);
 router.post("/:id/duplicate", duplicateProject);
+router.post("/:id/render", startRender);
+router.get("/:id/videos", listProjectVideos);
 
 export default router;

@@ -16,7 +16,7 @@ const videoSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["queued", "processing", "completed", "failed"],
+      enum: ["queued", "processing", "completed", "failed", "cancelled"],
       default: "queued",
     },
     progress: {
