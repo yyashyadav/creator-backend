@@ -32,6 +32,25 @@ const sceneSchema = new mongoose.Schema(
       enum: ["left", "center", "right"],
       default: "center",
     },
+    dialoguePosition: {
+      x: {
+        type: Number,
+        default: 50,
+        min: 0,
+        max: 100,
+      },
+      y: {
+        type: Number,
+        default: 18,
+        min: 0,
+        max: 100,
+      },
+    },
+    dialogueShape: {
+      type: String,
+      enum: ["speech", "thought", "shout", "caption", "whisper"],
+      default: "speech",
+    },
     scale: {
       type: Number,
       default: 1,

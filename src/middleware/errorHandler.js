@@ -1,8 +1,12 @@
 export function errorHandler(err, req, res, next) {
   console.error(err);
 
-  const statusCode = err.statusCode || 500;
-  const message = err.message || "Internal server error";
+  let statusCode = err.statusCode || 500;
+  let message = err.message || "Internal server error";
+
+  if (err.name === "MulterError" || message.includes("Only PNG")) {
+    statusCode = 400;
+  }
 
   res.status(statusCode).json({
     success: false,
