@@ -7,6 +7,7 @@ import healthRoutes from "./routes/health.js";
 import authRoutes from "./routes/auth.js";
 import projectRoutes from "./routes/projects.js";
 import { projectScenesRouter, sceneRouter } from "./routes/scenes.js";
+import videoRoutes from "./routes/videos.js";
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/projects", projectRoutes);
 app.use("/api/v1/projects/:projectId/scenes", projectScenesRouter);
 app.use("/api/v1/scenes", sceneRouter);
+app.use("/api/v1/videos", videoRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
